@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Lost & Found</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Campus Lost & Found</h1>
+        <p>Report lost items and help reunite them with their owners.</p>
+    </header>
+
+    <main>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <h2>Lost Something?</h2>
+            <p>
+                Report your lost or found item and let our smart
+                matching system help find a possible match.
+            </p>
+        </section>
+
+        <!-- Report Item Section -->
+        <section class="form-section">
+            <h2>Report an Item</h2>
+
+            <form id="itemForm">
+
+                <label for="type">Item Type</label>
+                <select id="type" required>
+                    <option value="">Select</option>
+                    <option value="lost">Lost</option>
+                    <option value="found">Found</option>
+                </select>
+
+                <label for="item_name">Item Name</label>
+                <input
+                    type="text"
+                    id="item_name"
+                    placeholder="Example: Black Wallet"
+                    required
+                >
+
+                <label for="category">Category</label>
+                <input
+                    type="text"
+                    id="category"
+                    placeholder="Example: Wallet"
+                    required
+                >
+
+                <label for="color">Color</label>
+                <input
+                    type="text"
+                    id="color"
+                    placeholder="Example: Black"
+                    required
+                >
+
+                <label for="location">Location</label>
+                <input
+                    type="text"
+                    id="location"
+                    placeholder="Example: Library"
+                    required
+                >
+
+                <label for="date">Date</label>
+                <input
+                    type="date"
+                    id="date"
+                    required
+                >
+
+                <label for="description">Description</label>
+                <textarea
+                    id="description"
+                    placeholder="Describe the item..."
+                    required
+                ></textarea>
+
+                <button type="submit">
+                    Report Item
+                </button>
+
+            </form>
+
+            <p id="message"></p>
+        </section>
+
+
+        <!-- Reported Items Section -->
+        <section class="items-section">
+
+            <h2>Reported Items</h2>
+
+            <p>
+                View items reported by students on campus.
+            </p>
+
+            <button type="button" id="loadItems">
+                View Reported Items
+            </button>
+
+            <div id="itemsContainer"></div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
