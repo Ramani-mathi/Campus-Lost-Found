@@ -1,119 +1,465 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Campus Lost & Found</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <!-- ================= HEADER ================= -->
+
     <header>
-        <h1>Campus Lost & Found</h1>
-        <p>Report lost items and help reunite them with their owners.</p>
+
+        <div class="header-content">
+
+            <div>
+                <h1>Campus Lost & Found</h1>
+
+                <p>
+                    Find lost belongings faster with
+                    smart item matching.
+                </p>
+            </div>
+
+        </div>
+
     </header>
+
 
     <main>
 
-        <!-- Hero Section -->
+        <!-- ================= HERO ================= -->
+
         <section class="hero">
-            <h2>Lost Something?</h2>
-            <p>
-                Report your lost or found item and let our smart
-                matching system help find a possible match.
-            </p>
+
+            <div class="hero-text">
+
+                <span class="badge">
+                    ☁️ AWS Cloud Powered
+                </span>
+
+                <h2>
+                    Lost something on campus?
+                </h2>
+
+                <p>
+                    Report your lost or found item.
+                    Our smart matching system compares
+                    item details and identifies possible matches.
+                </p>
+
+                <a href="#report" class="hero-button">
+                    Report an Item
+                </a>
+
+            </div>
+
+
+            <div class="hero-feature">
+
+                <div class="feature-icon">
+                    🔍
+                </div>
+
+                <h3>
+                    Smart Matching
+                </h3>
+
+                <p>
+                    Category, location, color, date
+                    and description are compared
+                    to find possible matches.
+                </p>
+
+            </div>
+
         </section>
 
-        <!-- Report Item Section -->
-        <section class="form-section">
-            <h2>Report an Item</h2>
+
+        <!-- ================= REPORT ITEM ================= -->
+
+        <section class="section-card" id="report">
+
+            <div class="section-heading">
+
+                <span class="section-number">
+                    01
+                </span>
+
+                <div>
+
+                    <h2>
+                        Report an Item
+                    </h2>
+
+                    <p>
+                        Tell us about your lost or found item.
+                    </p>
+
+                </div>
+
+            </div>
+
 
             <form id="itemForm">
 
-                <label for="type">Item Type</label>
-                <select id="type" required>
-                    <option value="">Select</option>
-                    <option value="lost">Lost</option>
-                    <option value="found">Found</option>
-                </select>
+                <div class="form-grid">
 
-                <label for="item_name">Item Name</label>
-                <input
-                    type="text"
-                    id="item_name"
-                    placeholder="Example: Black Wallet"
-                    required
+                    <!-- ITEM TYPE -->
+
+                    <div class="form-group">
+
+                        <label for="type">
+                            Item Type
+                        </label>
+
+                        <select id="type" required>
+
+                            <option value="">
+                                Select type
+                            </option>
+
+                            <option value="lost">
+                                Lost
+                            </option>
+
+                            <option value="found">
+                                Found
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- ITEM NAME -->
+
+                    <div class="form-group">
+
+                        <label for="item_name">
+                            Item Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="item_name"
+                            placeholder="Example: Black Wallet"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- CATEGORY -->
+
+                    <div class="form-group">
+
+                        <label for="category">
+                            Category
+                        </label>
+
+                        <input
+                            type="text"
+                            id="category"
+                            placeholder="Example: Wallet"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- COLOR -->
+
+                    <div class="form-group">
+
+                        <label for="color">
+                            Color
+                        </label>
+
+                        <input
+                            type="text"
+                            id="color"
+                            placeholder="Example: Black"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- LOCATION -->
+
+                    <div class="form-group">
+
+                        <label for="location">
+                            Location
+                        </label>
+
+                        <input
+                            type="text"
+                            id="location"
+                            placeholder="Example: Library"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- DATE -->
+
+                    <div class="form-group">
+
+                        <label for="date">
+                            Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="date"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- DESCRIPTION -->
+
+                <div class="form-group">
+
+                    <label for="description">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="description"
+                        placeholder="Describe the item clearly..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- ================= IMAGE ================= -->
+
+                <div class="form-group">
+
+                    <label for="image">
+                        Item Image
+                    </label>
+
+                    <input
+                        type="file"
+                        id="image"
+                        accept="image/jpeg,image/png,image/webp"
+                    >
+
+                    <small class="input-help">
+                        Upload a clear image of the lost or found item.
+                        JPG, PNG or WebP. Maximum 2 MB.
+                    </small>
+
+                    <div id="imagePreview"></div>
+
+                </div>
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    type="submit"
+                    class="primary-button"
                 >
 
-                <label for="category">Category</label>
-                <input
-                    type="text"
-                    id="category"
-                    placeholder="Example: Wallet"
-                    required
-                >
+                    🔍 Report & Find Matches
 
-                <label for="color">Color</label>
-                <input
-                    type="text"
-                    id="color"
-                    placeholder="Example: Black"
-                    required
-                >
-
-                <label for="location">Location</label>
-                <input
-                    type="text"
-                    id="location"
-                    placeholder="Example: Library"
-                    required
-                >
-
-                <label for="date">Date</label>
-                <input
-                    type="date"
-                    id="date"
-                    required
-                >
-
-                <label for="description">Description</label>
-                <textarea
-                    id="description"
-                    placeholder="Describe the item..."
-                    required
-                ></textarea>
-
-                <button type="submit">
-                    Report Item
                 </button>
 
             </form>
 
-            <p id="message"></p>
+
+            <div id="message"></div>
+
         </section>
 
 
-        <!-- Reported Items Section -->
-        <section class="items-section">
+        <!-- ================= SMART MATCH ================= -->
 
-            <h2>Reported Items</h2>
+        <section class="section-card smart-section">
 
-            <p>
-                View items reported by students on campus.
-            </p>
+            <div class="section-heading">
 
-            <button type="button" id="loadItems">
-                View Reported Items
+                <span class="section-number">
+                    02
+                </span>
+
+                <div>
+
+                    <h2>
+                        Smart Match Finder
+                    </h2>
+
+                    <p>
+                        Check possible matches for a reported item.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="match-search">
+
+                <input
+                    type="text"
+                    id="matchItemId"
+                    placeholder="Enter Item ID"
+                >
+
+                <button
+                    id="findMatches"
+                    class="primary-button"
+                >
+                    Find Matches
+                </button>
+
+            </div>
+
+
+            <div id="matchResult"></div>
+
+        </section>
+
+
+        <!-- ================= REPORTED ITEMS ================= -->
+
+        <section class="section-card">
+
+            <div class="section-heading">
+
+                <span class="section-number">
+                    03
+                </span>
+
+                <div>
+
+                    <h2>
+                        Reported Items
+                    </h2>
+
+                    <p>
+                        Items currently stored in the campus system.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="loadItems"
+                class="secondary-button"
+            >
+
+                📋 View Reported Items
+
             </button>
+
 
             <div id="itemsContainer"></div>
 
         </section>
 
+
+        <!-- ================= HOW IT WORKS ================= -->
+
+        <section class="how-section">
+
+            <h2>
+                How Smart Matching Works
+            </h2>
+
+
+            <div class="steps">
+
+                <div class="step">
+
+                    <div class="step-icon">
+                        1
+                    </div>
+
+                    <h3>
+                        Report
+                    </h3>
+
+                    <p>
+                        Student reports a lost or found item.
+                    </p>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-icon">
+                        2
+                    </div>
+
+                    <h3>
+                        Compare
+                    </h3>
+
+                    <p>
+                        The system compares important item details.
+                    </p>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-icon">
+                        3
+                    </div>
+
+                    <h3>
+                        Match
+                    </h3>
+
+                    <p>
+                        Possible matching items are ranked automatically.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
     </main>
+
+
+    <footer>
+
+        <p>
+            Campus Lost & Found
+        </p>
+
+        <p>
+            Cloud-based smart item matching system
+        </p>
+
+    </footer>
+
 
     <script src="script.js"></script>
 
 </body>
+
 </html>
