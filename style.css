@@ -4,101 +4,634 @@
     box-sizing: border-box;
 }
 
+
 body {
     font-family: Arial, sans-serif;
     background: #f4f7fb;
     color: #1f2937;
+    line-height: 1.6;
 }
+
+
+/* ================= HEADER ================= */
 
 header {
-    background: #172554;
+    background: linear-gradient(
+        135deg,
+        #172554,
+        #1e3a8a
+    );
+
     color: white;
-    text-align: center;
-    padding: 35px 20px;
+    padding: 45px 20px;
 }
+
+
+.header-content {
+    max-width: 1100px;
+    margin: auto;
+}
+
 
 header h1 {
-    font-size: 32px;
-    margin-bottom: 10px;
+    font-size: 36px;
+    margin-bottom: 8px;
 }
+
 
 header p {
-    font-size: 16px;
+    font-size: 17px;
+    opacity: 0.9;
 }
+
+
+/* ================= MAIN ================= */
 
 main {
-    width: 90%;
-    max-width: 900px;
-    margin: 30px auto;
+    width: 92%;
+    max-width: 1100px;
+    margin: 35px auto;
 }
+
+
+/* ================= HERO ================= */
 
 .hero {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+
+.hero-text,
+.hero-feature {
     background: white;
-    padding: 30px;
-    border-radius: 12px;
-    text-align: center;
+    border-radius: 16px;
+    padding: 35px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0, 0, 0, 0.07);
+}
+
+
+.hero-text h2 {
+    font-size: 32px;
+    color: #172554;
+    margin: 15px 0;
+}
+
+
+.hero-text p {
+    color: #64748b;
     margin-bottom: 25px;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
 }
 
-.hero h2 {
-    margin-bottom: 10px;
-    color: #172554;
-}
 
-.form-section {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
-}
+.badge {
+    display: inline-block;
 
-.form-section h2 {
-    margin-bottom: 20px;
-    color: #172554;
-}
+    background: #e0e7ff;
+    color: #3730a3;
 
-form {
-    display: flex;
-    flex-direction: column;
-}
+    padding: 6px 12px;
 
-label {
-    margin-top: 15px;
-    margin-bottom: 6px;
+    border-radius: 20px;
+
+    font-size: 13px;
     font-weight: bold;
 }
+
+
+.hero-button {
+    display: inline-block;
+
+    background: #172554;
+    color: white;
+
+    text-decoration: none;
+
+    padding: 12px 20px;
+
+    border-radius: 7px;
+
+    font-weight: bold;
+}
+
+
+.hero-feature {
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.feature-icon {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+
+.hero-feature h3 {
+    color: #172554;
+    margin-bottom: 8px;
+}
+
+
+.hero-feature p {
+    color: #64748b;
+}
+
+
+/* ================= SECTION ================= */
+
+.section-card {
+    background: white;
+
+    padding: 30px;
+
+    margin-bottom: 25px;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0, 0, 0, 0.07);
+}
+
+
+.section-heading {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+
+.section-number {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    background: #172554;
+    color: white;
+
+    border-radius: 50%;
+
+    font-weight: bold;
+}
+
+
+.section-heading h2 {
+    color: #172554;
+}
+
+
+.section-heading p {
+    color: #64748b;
+}
+
+
+/* ================= FORM ================= */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 18px;
+}
+
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 18px;
+}
+
+
+label {
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
 
 input,
 select,
 textarea {
     padding: 12px;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
+
+    border:
+        1px solid
+        #cbd5e1;
+
+    border-radius: 7px;
+
     font-size: 15px;
+
+    outline: none;
 }
 
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #2563eb;
+}
+
+
 textarea {
-    min-height: 100px;
+    min-height: 120px;
     resize: vertical;
 }
 
-button {
-    margin-top: 25px;
-    padding: 13px;
-    background: #172554;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
+
+/* ================= IMAGE UPLOAD ================= */
+
+.input-help {
+    color: #64748b;
+
+    font-size: 13px;
+
+    margin-top: 6px;
 }
 
-button:hover {
+
+#imagePreview {
+    margin-top: 12px;
+}
+
+
+#imagePreview img {
+    width: 200px;
+    height: 200px;
+
+    object-fit: cover;
+
+    border:
+        1px solid
+        #cbd5e1;
+
+    border-radius: 10px;
+
+    display: block;
+}
+
+
+/* Images shown in reported items */
+
+.item-image {
+    width: 220px;
+    height: 180px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    border:
+        1px solid
+        #dbe2ea;
+
+    margin-bottom: 15px;
+
+    display: block;
+}
+
+
+/* Images shown in matches */
+
+.match-image {
+    width: 200px;
+    height: 160px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    border:
+        1px solid
+        #dbe2ea;
+
+    margin-bottom: 15px;
+
+    display: block;
+}
+
+
+/* ================= BUTTONS ================= */
+
+button {
+    border: none;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    border-radius: 7px;
+}
+
+
+.primary-button {
+    background: #172554;
+    color: white;
+
+    padding: 13px 20px;
+}
+
+
+.primary-button:hover {
     background: #1e3a8a;
 }
 
+
+.secondary-button {
+    background: #e2e8f0;
+    color: #172554;
+
+    padding: 12px 18px;
+}
+
+
+.secondary-button:hover {
+    background: #cbd5e1;
+}
+
+
+/* ================= MESSAGE ================= */
+
 #message {
-    margin-top: 15px;
+    margin-top: 20px;
+
+    padding: 15px;
+
+    border-radius: 8px;
+
     font-weight: bold;
+}
+
+
+/* ================= MATCH ================= */
+
+.smart-section {
+    border-top:
+        5px solid
+        #2563eb;
+}
+
+
+.match-search {
+    display: flex;
+    gap: 10px;
+}
+
+
+.match-search input {
+    flex: 1;
+}
+
+
+#matchResult {
+    margin-top: 25px;
+}
+
+
+/* ================= MATCH CARD ================= */
+
+.match-card {
+    background: #f8fafc;
+
+    border:
+        1px solid
+        #dbe2ea;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    margin-bottom: 15px;
+}
+
+
+.match-card h3 {
+    color: #172554;
+    margin-bottom: 10px;
+}
+
+
+.score {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    background: #dbeafe;
+
+    color: #1e40af;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+
+.match-bar {
+    width: 100%;
+
+    height: 9px;
+
+    background: #e2e8f0;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    margin:
+        10px 0 15px;
+}
+
+
+.match-progress {
+    height: 100%;
+    background: #2563eb;
+}
+
+
+/* ================= ITEM CARD ================= */
+
+.item-card {
+    border:
+        1px solid
+        #dbe2ea;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    margin-top: 18px;
+
+    background: #f8fafc;
+}
+
+
+.item-card h3 {
+    color: #172554;
+    margin-bottom: 10px;
+}
+
+
+.item-card p {
+    margin: 5px 0;
+}
+
+
+.status-lost {
+    color: #b91c1c;
+    font-weight: bold;
+}
+
+
+.status-found {
+    color: #15803d;
+    font-weight: bold;
+}
+
+
+/* ================= HOW IT WORKS ================= */
+
+.how-section {
+    background: #172554;
+
+    color: white;
+
+    padding: 35px;
+
+    border-radius: 16px;
+
+    margin-bottom: 30px;
+}
+
+
+.how-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+.steps {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.step {
+    text-align: center;
+}
+
+
+.step-icon {
+    width: 45px;
+    height: 45px;
+
+    margin:
+        0 auto 10px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+    color: #172554;
+
+    border-radius: 50%;
+
+    font-weight: bold;
+}
+
+
+.step p {
+    color: #cbd5e1;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #0f172a;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 25px;
+}
+
+
+footer p:first-child {
+    font-weight: bold;
+
+    margin-bottom: 5px;
+}
+
+
+footer p:last-child {
+    color: #94a3b8;
+
+    font-size: 14px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+
+    .match-search {
+        flex-direction: column;
+    }
+
+
+    header h1 {
+        font-size: 28px;
+    }
+
+
+    .item-image,
+    .match-image {
+        width: 100%;
+        max-width: 300px;
+    }
+
 }
